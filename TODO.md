@@ -55,3 +55,11 @@ Prepare a concise paragraph for the homepage and manuscript rebuttal that states
 - [ ] Remove non-anonymous organization/team references from screenshots and metadata.
 - [ ] Replace personal links with anonymous placeholders until review ends.
 - [ ] Verify repository commit history visibility policy for double-blind compliance.
+
+## 2026-04-29 Website update progress
+
+- [x] Added dataset visual materials to homepage (`assert/objects.png`, `assert/real_data_frame.png`, `assert/sim_data_frame.png`).
+- [x] Added robot configuration PDF entry (`assert/real_robot_config.pdf`) with direct open link.
+- [x] Added task videos (`video/task1.mp4`, `video/task3.mp4`) and clarified that Task 2 is a subset of Task 1 (starts from an intermediate state).
+- [x] Replaced direct Markdown links with HTML-rendered documentation links through `docs/viewer.html`.
+- [x] Confirmed dataset download link points to: https://huggingface.co/datasets/rocochallenge2025/rocochallenge2025

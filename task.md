@@ -283,3 +283,29 @@ Boreas 的公开页面结构则强调了 **Documentation / Paper / Devkit / Lead
 6. 网站内容与论文表述一致。
 
 如果这 6 条都满足，这个工作就已经达到重投需要的实用标准了。
+
+---
+
+## 2026-04-29 执行记录：网站素材接入与文档渲染流程
+
+本次更新完成了首页媒体素材接入、任务视频展示、以及文档访问流程调整：
+
+1. **首页素材接入**
+   - 新增 `assert/objects.png`（操作物体展示）
+   - 新增 `assert/real_data_frame.png`（真实数据采集示例）
+   - 新增 `assert/sim_data_frame.png`（仿真数据采集示例）
+   - 新增 `assert/real_robot_config.pdf` 链接（机器人型号/传感器配置）
+
+2. **任务视频展示**
+   - 新增 `video/task1.mp4` 示例
+   - 新增 `video/task3.mp4` 示例
+   - 在网页中明确说明：**Task 2 是 Task 1 的子集**，即从某个中间装配状态继续完成。
+
+3. **文档访问流程变更（关键）**
+   - 不再直接跳转到原始 `.md`。
+   - 新增 `docs/viewer.html`，通过前端 Markdown 渲染（`marked`）展示文档内容。
+   - `index.html` 内所有文档入口改为 `docs/viewer.html?file=xxx.md`。
+
+4. **下载入口确认**
+   - 数据集下载入口更新并统一为：
+     `https://huggingface.co/datasets/rocochallenge2025/rocochallenge2025`
