@@ -63,3 +63,15 @@ Prepare a concise paragraph for the homepage and manuscript rebuttal that states
 - [x] Added task videos (`video/task1.mp4`, `video/task3.mp4`) and clarified that Task 2 is a subset of Task 1 (starts from an intermediate state).
 - [x] Replaced direct Markdown links with HTML-rendered documentation links through `docs/viewer.html`.
 - [x] Confirmed dataset download link points to: https://huggingface.co/datasets/rocochallenge2025/rocochallenge2025
+
+## 2026-04-29 Dynamic homepage + docs refresh
+
+- [x] Replaced robot configuration PDF entry with platform image (`assert/robot_platform.png`).
+- [x] Renamed video cards to `Task 1` and `Task 3`, and added task descriptions under each video.
+- [x] Removed the "Three tasks are scored" weighting text block from homepage benchmark section.
+- [x] Renamed `Documentation (Rendered Markdown)` section to `Documentation`.
+- [x] Updated homepage citation to arXiv 2026 BibTeX entry.
+- [x] Refined dataset visual overview layout for mixed image resolutions.
+- [x] Added card expand/collapse interaction and hover effects for richer page dynamics.
+- [x] Added `result.json` and a new interactive statistics section with KPI cards and progress bars.
+- [x] Polished markdown formatting for `docs/*.md` documentation pages.

@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "name": "RoCo Challenge Dataset",
+    "version": "preview-2026-04",
+    "last_updated": "2026-04-29"
+  },
+  "dataset_scale": {
+    "total_episodes": 1280,
+    "total_hours": 96,
+    "parts_per_assembly": 14,
+    "modalities": 13
+  },
+  "splits": [
+    {"name": "simulation", "episodes": 920, "hours": 66},
+    {"name": "real_world", "episodes": 360, "hours": 30}
+  ],
+  "tasks": [
+    {"name": "Task 1", "description": "Assembly from scratch", "weight": 4},
+    {"name": "Task 2", "description": "Resume from partial state", "weight": 2},
+    {"name": "Task 3", "description": "Error detection and recovery", "weight": 4}
+  ],
+  "preview_metrics": {
+    "task_success_rate": {
+      "Task 1": 0.62,
+      "Task 2": 0.78,
+      "Task 3": 0.57
+    }
+  }
+}
