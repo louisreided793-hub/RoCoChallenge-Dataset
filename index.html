@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RoCo Challenge Dataset (Anonymous IJRR Submission)</title>
+  <meta name="description" content="Anonymous project page for the RoCo Challenge dataset and devkit." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #141b34;
+      --card-soft: #1c2444;
+      --text: #ecf0ff;
+      --muted: #b2bada;
+      --accent: #7aa2ff;
+      --accent-2: #6ee7d8;
+      --line: #2b3668;
+      --max: 1080px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 15% 15%, #1c2756, #0b1020 38%);
+      line-height: 1.55;
+    }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .nav {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(8px);
+      background: color-mix(in srgb, var(--bg) 84%, transparent);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 0;
+      gap: 12px;
+    }
+    .brand { font-weight: 800; letter-spacing: .2px; color: var(--text); }
+    .menu { display: flex; flex-wrap: wrap; gap: 14px; font-size: 14px; }
+    .hero { padding: 72px 0 42px; }
+    .pill {
+      display: inline-block; padding: 6px 10px; border-radius: 999px;
+      background: #1d2b5d; border: 1px solid #2d427d; color: #cbd8ff; font-size: 12px;
+    }
+    h1 { font-size: clamp(30px, 5vw, 54px); line-height: 1.08; margin: 16px 0; }
+    .subtitle { max-width: 780px; color: var(--muted); font-size: 18px; }
+    .cta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-block; border: 1px solid #3a4f8d; border-radius: 10px;
+      padding: 10px 16px; color: var(--text); background: #1a2754;
+      font-weight: 600;
+    }
+    .btn.primary { background: linear-gradient(90deg, #3151bd, #2c8bb4); border-color: #4a70ef; }
+    section { padding: 26px 0; }
+    h2 { margin: 0 0 12px; font-size: 28px; }
+    .muted { color: var(--muted); }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;
+    }
+    .card {
+      background: linear-gradient(180deg, var(--card), var(--card-soft));
+      border: 1px solid var(--line); border-radius: 14px; padding: 16px;
+    }
+    ul { padding-left: 20px; }
+    code {
+      background: #0f1630; border: 1px solid #2b3a73;
+      border-radius: 8px; padding: 2px 6px; color: #c4d2ff;
+    }
+    pre {
+      overflow-x: auto; margin: 8px 0 0;
+      background: #0f1630; border: 1px solid #2b3a73;
+      border-radius: 10px; padding: 12px;
+    }
+    table { width: 100%; border-collapse: collapse; border: 1px solid var(--line); }
+    th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; }
+    th { background: #1a2654; }
+    .foot {
+      margin: 30px 0 40px;
+      padding: 14px 16px;
+      background: #111a3a;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">RoCo Challenge Dataset</a>
+      <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#getting-started">Getting Started</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#devkit">Devkit</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#download">Download</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="wrap">
+      <span class="pill">Anonymous IJRR Submission Artifact</span>
+      <h1>RoCo Challenge:<br/>A Dataset for Collaborative Gearbox Assembly</h1>
+      <p class="subtitle">
+        A real-and-simulation benchmark for human-centered robot collaboration with instruction following,
+        error recovery, and autonomous continuation in industrial-style assembly.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#download">Download Data</a>
+        <a class="btn" href="#devkit">Open Devkit Guide</a>
+        <a class="btn" href="#citation">Paper / Citation</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap">
+      <h2>Why this dataset matters</h2>
+      <ul>
+        <li><strong>Bridges sim-to-real transfer:</strong> aligned tasks and metrics across simulation and physical executions.</li>
+        <li><strong>Focuses on practical failures:</strong> includes partial-state continuation and error correction, not only clean demonstrations.</li>
+        <li><strong>Supports future algorithm design:</strong> useful for perception, multimodal policy learning, HRI-aware planning, and safe intervention.</li>
+        <li><strong>Enables reproducible comparison:</strong> shared task definitions, scoring protocol, and baseline-ready data format.</li>
+      </ul>
+      <p class="muted">See also: <a href="docs/utility.md">utility note for future real-data use</a>.</p>
+    </div>
+  </section>
+
+  <section id="dataset">
+    <div class="wrap">
+      <h2>What is included</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Real-world subset</h3>
+          <p class="muted">Bimanual robot trajectories and synchronized multimodal observations from physical collaborative assembly runs.</p>
+        </article>
+        <article class="card">
+          <h3>Simulation subset</h3>
+          <p class="muted">Task-aligned simulated episodes for model development, controlled evaluation, and ablation studies.</p>
+        </article>
+        <article class="card">
+          <h3>Annotations & phases</h3>
+          <p class="muted">Task-phase semantics for from-scratch assembly, partial continuation, and error-recovery behavior.</p>
+        </article>
+        <article class="card">
+          <h3>Failure/recovery cases</h3>
+          <p class="muted">Scenarios with injected mistakes to evaluate correction policies and robust recovery pipelines.</p>
+        </article>
+        <article class="card">
+          <h3>Baselines</h3>
+          <p class="muted">Reference setup and starter scripts for training/fine-tuning baseline policies.</p>
+        </article>
+        <article class="card">
+          <h3>Devkit docs</h3>
+          <p class="muted">Loader format, environment setup, and benchmark usage documentation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="getting-started">
+    <div class="wrap">
+      <h2>Quick Start</h2>
+      <ol>
+        <li>Download data from Hugging Face.</li>
+        <li>Install dependencies (Python 3.11 and Isaac stack).</li>
+        <li>Load one demonstration sequence.</li>
+        <li>Run one benchmark/baseline example.</li>
+      </ol>
+      <pre><code># 1) clone code (anonymized placeholder)
+git clone &lt;ANON_REPOSITORY_URL&gt;
+
+# 2) install package
+python -m pip install -e source/Galaxea_Lab_External
+
+# 3) inspect tasks
+python scripts/list_envs.py
+
+# 4) run sanity baseline
+python scripts/zero_agent.py --task=&lt;TASK_NAME&gt;</code></pre>
+      <p class="muted">Detailed setup: <a href="docs/installation.md">docs/installation.md</a>, examples: <a href="docs/Example.md">docs/Example.md</a>.</p>
+    </div>
+  </section>
+
+  <section id="devkit">
+    <div class="wrap">
+      <h2>Devkit</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Core functions</h3>
+          <ul>
+            <li>Dataset loading helpers</li>
+            <li>Task/environment listing</li>
+            <li>Dummy-agent execution checks</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Training hooks</h3>
+          <ul>
+            <li>Format conversion for ACT-style pipelines</li>
+            <li>Baseline training command templates</li>
+            <li>Fine-tuning entry points</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Documentation</h3>
+          <ul>
+            <li><a href="docs/overview.md">Challenge overview</a></li>
+            <li><a href="docs/data.md">Dataset description</a></li>
+            <li><a href="docs/installation.md">Installation guide</a></li>
+            <li><a href="docs/Example.md">Baseline examples</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="benchmark">
+    <div class="wrap">
+      <h2>Benchmark protocol</h2>
+      <p class="muted">Three tasks are scored and combined with a <code>4 : 2 : 4</code> weighting:</p>
+      <pre><code>Final Score = (4*S1 + 2*S2 + 4*S3) / 10</code></pre>
+      <table>
+        <thead>
+          <tr><th>Task</th><th>Definition</th><th>Score</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>T1: Assembly from Scratch</td><td>Complete full assembly sequence from empty state.</td><td>S1</td></tr>
+          <tr><td>T2: Resume from Partial State</td><td>Continue correctly from a partially assembled state.</td><td>S2</td></tr>
+          <tr><td>T3: Error Detection & Recovery</td><td>Remove wrong parts and recover to correct final assembly.</td><td>S3</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Reference leaderboard data: <a href="docs/results.json">docs/results.json</a>.</p>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="wrap">
+      <h2>Download</h2>
+      <p>
+        Dataset host (public):
+        <a href="https://huggingface.co/datasets/rocochallenge2025/rocochallenge2025">Hugging Face dataset page</a>.
+      </p>
+      <ul>
+        <li>Version: v1.0 (current public release for this submission artifact)</li>
+        <li>Format: synchronized multimodal trajectories (actions + proprioception + RGB streams)</li>
+        <li>License and usage terms: see dataset host page</li>
+        <li>Integrity files and mirrors: pending (see <a href="TODO.md">TODO.md</a>)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="citation">
+    <div class="wrap">
+      <h2>Citation</h2>
+      <p class="muted">For anonymous review, we provide placeholder entries:</p>
+      <pre><code>@article{roco_ijrr_anonymous_2026,
+  title   = {RoCo Challenge: Real-and-Simulation Collaborative Gearbox Assembly Dataset},
+  author  = {Anonymous Authors},
+  journal = {Under Review at IJRR},
+  year    = {2026}
+}</code></pre>
+      <p>
+        Additional competition references:
+        AAAI 2026 Challenge page and IROS 2026 proposal links are being prepared (see <a href="TODO.md">TODO.md</a>).
+      </p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <p class="foot">
+      Contact (project mailbox): <a href="mailto:rocochallenge@gmail.com">rocochallenge@gmail.com</a>.
+      This page is intentionally anonymized for peer review.
+    </p>
+  </div>
+</body>
+</html>
