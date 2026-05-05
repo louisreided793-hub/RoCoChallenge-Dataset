@@ -1,74 +1,58 @@
-## 📋 Project Overview
+# 📋 Installation Guide
 
-This repository contains the code and resources for **RoCo Challenge**. .
+This guide covers environment setup and sanity checks for the RoCo Challenge simulation stack.
 
-This guide will be continuously updated.
-
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-Before you begin, ensure you have the following installed:
+## ✅ Prerequisites
 
 - Python 3.11
 - CUDA 12.2
 - Git
 
-### Clone the Repository
+## 1) Clone the repository
 
 ```bash
 git clone https://github.com/rocochallenge/gearboxAssembly.git
 ```
 
----
+## 2) Install Isaac Lab + Isaac Sim
 
-## Installation
+Install **Isaac Lab 2.3.0** with **Isaac Sim 5.0.0** following the official guide:  
+https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html
 
-- Install Isaac Lab 2.3.0 with IsaacSim 5.0.0 by following the [installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html).
-  We recommend using the conda installation as it simplifies calling Python scripts from the terminal.
+> We recommend a conda-based setup for easier command-line execution.
 
-- Clone or copy this project/repository separately from the Isaac Lab installation (i.e. outside the `IsaacLab` directory):
+## 3) Install RoCo extension in editable mode
 
-- Using a python interpreter that has Isaac Lab installed, install the library in editable mode using:
+Use a Python environment where Isaac Lab is already available:
 
-    ```bash
-    # use 'PATH_TO_isaaclab.sh|bat -p' instead of 'python' if Isaac Lab is not installed in Python venv or conda
-    python -m pip install -e source/Galaxea_Lab_External
-    ```
+```bash
+python -m pip install -e source/Galaxea_Lab_External
+```
 
-- Verify that the extension is correctly installed by:
+## 4) Verify installation
 
-    - Listing the available tasks:
+### List available tasks
 
-        Note: It the task name changes, it may be necessary to update the search pattern `"Template-"`
-        (in the `scripts/list_envs.py` file) so that it can be listed.
+```bash
+python scripts/list_envs.py
+```
 
-        ```bash
-        # use 'FULL_PATH_TO_isaaclab.sh|bat -p' instead of 'python' if Isaac Lab is not installed in Python venv or conda
-        python scripts/list_envs.py
-        ```
+If task naming changes, update the search pattern in `scripts/list_envs.py`.
 
+### Run dummy agents
 
-    - Running a task with dummy agents:
+- Zero-action agent:
 
-        These include dummy agents that output zero or random agents. They are useful to ensure that the environments are configured correctly.
+```bash
+python scripts/zero_agent.py --task=<TASK_NAME>
+```
 
-        - Zero-action agent
+- Random-action agent:
 
-            ```bash
-            # use 'FULL_PATH_TO_isaaclab.sh|bat -p' instead of 'python' if Isaac Lab is not installed in Python venv or conda
-            python scripts/zero_agent.py --task=<TASK_NAME>
-            ```
-        - Random-action agent
+```bash
+python scripts/random_agent.py --task=<TASK_NAME>
+```
 
-            ```bash
-            # use 'FULL_PATH_TO_isaaclab.sh|bat -p' instead of 'python' if Isaac Lab is not installed in Python venv or conda
-            python scripts/random_agent.py --task=<TASK_NAME>
-            ```
+## 5) Evaluate model performance
 
-
-
-### Evaluate Model Performance
-
-TBA
+Evaluation scripts: **TBA**.

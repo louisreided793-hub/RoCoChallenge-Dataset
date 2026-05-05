@@ -309,3 +309,27 @@ Boreas 的公开页面结构则强调了 **Documentation / Paper / Devkit / Lead
 4. **下载入口确认**
    - 数据集下载入口更新并统一为：
      `https://huggingface.co/datasets/rocochallenge2025/rocochallenge2025`
+
+---
+
+## 2026-04-29 执行更新记录
+
+本轮已完成以下网页与文档更新：
+
+1. 首页 `index.html` 完成结构与内容调整：
+   - `assert/robot_platform.png` 替换原机器人配置 PDF 入口。
+   - 视频标题改为 `Task 1`、`Task 3`，并在视频下方增加任务描述。
+   - 删除 “Three tasks are scored ...” 的加权说明段落。
+   - `Documentation (Rendered Markdown)` 改为 `Documentation`。
+   - Citation 更新为 AAAI 2026 对应 BibTeX。
+
+2. 视觉与交互增强：
+   - Dataset visual overview 改为统一容器、`object-fit: contain` 的自适应排版，缓解不同分辨率导致的不整齐问题。
+   - 卡片增加悬停动效与点击展开说明。
+
+3. 数据可视化预埋：
+   - 新增 `result.json`，包含数据规模、拆分、任务权重与示例成功率。
+   - 首页新增 `Interactive dataset statistics` 区块，读取 `result.json` 自动渲染 KPI 与条形图。
+
+4. 文档润色：
+   - 已对 `docs/Example.md`、`docs/data.md`、`docs/installation.md`、`docs/utility.md` 进行排版与措辞整理。

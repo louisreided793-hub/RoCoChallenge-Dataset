@@ -2,13 +2,13 @@
 ## 🌐 Challenge Overview
 The Gearbox assembly Assistance Challenge evaluates robotic systems in collaborative gearbox assembly within human-centric manufacturing environments. It targets scenarios where robots must work seamlessly with human operators. The challenge focuses on:
 
-• **Prediction and Proactive Assistance**: Anticipating human requirements during assembly. 
+- **Prediction and Proactive Assistance**: Anticipating human requirements during assembly. 
 
-• **Instruction Following**: Responding to gesture-based instructions. 
+- **Instruction Following**: Responding to gesture-based instructions. 
 
-• **Error Detection and Correction**: Detecting errors, correcting them, and continuing the assembly correctly. 
+- **Error Detection and Correction**: Detecting errors, correcting them, and continuing the assembly correctly. 
 
-• **Autonomous Continuation**: Autonomously completing assembly with generalized part placement.
+- **Autonomous Continuation**: Autonomously completing assembly with generalized part placement.
 
 Two complementary tracks are designed: **Simulation** and **Onsite Track**. The challenge aligns with HCM-AAAI26 by emphasizing human–robot collaboration, error handling, and proactive assistance in complex manufacturing processes.
 
@@ -20,20 +20,20 @@ Two complementary tracks are designed: **Simulation** and **Onsite Track**. The 
 
 Robots are evaluated in a simulated gearbox assembly environment where the human role is abstracted as initial conditions. A single Simulation Task is defined, but it may include the following representative scenarios:
 
-•	**Assembly from Scratch**: Starting from an empty state, where the robot completes the assembly pipeline as its contribution to a joint workflow.
+- **Assembly from Scratch**: Starting from an empty state, where the robot completes the assembly pipeline as its contribution to a joint workflow.
 
-•	**Resume from Partial State**: The assembly has been partially completed by a “virtual human operator.” The robot must recognize the current state and continue to completion in the correct order.
+- **Resume from Partial State**: The assembly has been partially completed by a “virtual human operator.” The robot must recognize the current state and continue to completion in the correct order.
 
-•	**Error Detection and Recovery**: Errors are injected to mimic human mistakes. The robot must detect, remove incorrect parts, restore the valid state, and continue assembly.
+- **Error Detection and Recovery**: Errors are injected to mimic human mistakes. The robot must detect, remove incorrect parts, restore the valid state, and continue assembly.
 
-### ⚒️Onsite Track — Human–Robot Collaborative Assistance
+### ⚒️ Onsite Track — Human–Robot Collaborative Assistance
 Robots collaborate with human operators under clear HRI protocols (e.g., gestures) on standardized physical kits and platforms. A single Onsite Task is defined, which may involve the following representative scenarios:
 
-• **From-Scratch Physical Assembly:** Beginning from an empty state, with the robot responsible for executing the canonical gearbox assembly sequence.
+- **From-Scratch Physical Assembly:** Beginning from an empty state, with the robot responsible for executing the canonical gearbox assembly sequence.
 
-• **Human-Aware Error Intervention:** While observing human assembly, the robot identifies mistakes, flags them in real time, performs safe corrections (remove/replace), and resumes the correct workflow.
+- **Human-Aware Error Intervention:** While observing human assembly, the robot identifies mistakes, flags them in real time, performs safe corrections (remove/replace), and resumes the correct workflow.
 
-• **Continuation and Proactive Assistance:** If the human leaves mid-task, the robot autonomously completes the remaining steps with part-placement generalization. While the human is present, it proactively provides part/tool hand-overs aligned with the current step to reduce idle time and cognitive load.
+- **Continuation and Proactive Assistance:** If the human leaves mid-task, the robot autonomously completes the remaining steps with part-placement generalization. While the human is present, it proactively provides part/tool hand-overs aligned with the current step to reduce idle time and cognitive load.
 
 ---
 
