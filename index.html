@@ -276,11 +276,16 @@
       .then(data => {
         // 1. Populate KPI Cards
         const kpi = document.getElementById('kpi');
+        const partsPerAssemblyRaw = data?.dataset_scale?.parts_per_assembly;
+        const partsPerAssembly = Array.isArray(partsPerAssemblyRaw)
+          ? partsPerAssemblyRaw.join('-')
+          : String(partsPerAssemblyRaw ?? 'N/A').replace(/\s*~\s*/g, '-').trim();
+
         const coreStats = [
           ['Total Episodes', data.dataset_scale.total_episodes],
           ['Total Hours', data.dataset_scale.total_hours],
           ['Total Frames', (data.dataset_scale.total_frames / 1000).toFixed(0) + 'k+'],
-          ['Parts / Assy', data.dataset_scale.parts_per_assembly],
+          ['Parts / Assy', partsPerAssembly],
           ['Unique Objects', data.dataset_scale.num_objects],
           ['Storage Size', data.dataset_scale.storage_gb + ' GB']
         ];
